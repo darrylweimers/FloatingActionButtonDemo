@@ -15,6 +15,9 @@
 		CD4DE5E22597737C00E4ECF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD4DE5E02597737C00E4ECF5 /* LaunchScreen.storyboard */; };
 		CD4DE5ED2597737D00E4ECF5 /* FloatButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4DE5EC2597737D00E4ECF5 /* FloatButtonTests.swift */; };
 		CD4DE5F82597737D00E4ECF5 /* FloatButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4DE5F72597737D00E4ECF5 /* FloatButtonUITests.swift */; };
+		CD4DE6272597932100E4ECF5 /* FloatingActionButtonExampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4DE6262597932100E4ECF5 /* FloatingActionButtonExampleController.swift */; };
+		CD4DE63B259837CC00E4ECF5 /* FABCircleExpandExampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4DE63A259837CC00E4ECF5 /* FABCircleExpandExampleController.swift */; };
+		CD4DE644259838C600E4ECF5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4DE643259838C600E4ECF5 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		CD4DE5F32597737D00E4ECF5 /* FloatButtonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloatButtonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD4DE5F72597737D00E4ECF5 /* FloatButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatButtonUITests.swift; sourceTree = "<group>"; };
 		CD4DE5F92597737D00E4ECF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD4DE6262597932100E4ECF5 /* FloatingActionButtonExampleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButtonExampleController.swift; sourceTree = "<group>"; };
+		CD4DE63A259837CC00E4ECF5 /* FABCircleExpandExampleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FABCircleExpandExampleController.swift; sourceTree = "<group>"; };
+		CD4DE643259838C600E4ECF5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		CD4DE5D42597737900E4ECF5 /* FloatButton */ = {
 			isa = PBXGroup;
 			children = (
+				CD4DE642259838B700E4ECF5 /* Extensions */,
 				CD4DE5D52597737900E4ECF5 /* AppDelegate.swift */,
 				CD4DE5D72597737900E4ECF5 /* SceneDelegate.swift */,
 				CD4DE5D92597737900E4ECF5 /* ViewController.swift */,
@@ -106,6 +113,8 @@
 				CD4DE5DE2597737C00E4ECF5 /* Assets.xcassets */,
 				CD4DE5E02597737C00E4ECF5 /* LaunchScreen.storyboard */,
 				CD4DE5E32597737C00E4ECF5 /* Info.plist */,
+				CD4DE6262597932100E4ECF5 /* FloatingActionButtonExampleController.swift */,
+				CD4DE63A259837CC00E4ECF5 /* FABCircleExpandExampleController.swift */,
 			);
 			path = FloatButton;
 			sourceTree = "<group>";
@@ -126,6 +135,14 @@
 				CD4DE5F92597737D00E4ECF5 /* Info.plist */,
 			);
 			path = FloatButtonUITests;
+			sourceTree = "<group>";
+		};
+		CD4DE642259838B700E4ECF5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD4DE643259838C600E4ECF5 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD4DE5DA2597737900E4ECF5 /* ViewController.swift in Sources */,
+				CD4DE644259838C600E4ECF5 /* Extensions.swift in Sources */,
 				CD4DE5D62597737900E4ECF5 /* AppDelegate.swift in Sources */,
+				CD4DE6272597932100E4ECF5 /* FloatingActionButtonExampleController.swift in Sources */,
 				CD4DE5D82597737900E4ECF5 /* SceneDelegate.swift in Sources */,
+				CD4DE63B259837CC00E4ECF5 /* FABCircleExpandExampleController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

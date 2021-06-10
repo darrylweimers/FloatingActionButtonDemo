@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FABExpandCircleController.swift
 //  FloatButton
 //
 //  Created by Darryl Weimers on 2020-12-26.
@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ViewController : UIViewController {
+
+
+class FABCircleExpandExampleController : UIViewController {
     
     public enum ButtonType : Int, CaseIterable {
         case main = 0
@@ -25,19 +27,23 @@ class ViewController : UIViewController {
     private let buttonSize: CGFloat = 45//56
     private var secondary1ButtonXTranslation: CGFloat {
         get {
-            return buttonSize + spaceBetweenButton
+            return (buttonSize * 5 / 2) - buttonSize / 2
         }
     }
-    
     private var secondary2ButtonXTranslation: CGFloat  {
         get {
-            return secondary1ButtonXTranslation * 2
+            return (buttonSize/2 * 5 / 2)  //buttonSize + spaceBetweenButton
+        }
+    }
+    private var secondary2ButtonYTranslation: CGFloat {
+        get {
+            return (buttonSize/2 * 5 / 2)  //buttonSize + spaceBetweenButton
         }
     }
     
-    private var secondary3ButtonXTranslation: CGFloat {
+    private var secondary3ButtonYTranslation: CGFloat {
         get {
-            return secondary1ButtonXTranslation * 3
+            return (buttonSize * 5 / 2) - buttonSize / 2
         }
     }
     private var menuViewTransform: TransformState = .normal
@@ -45,7 +51,7 @@ class ViewController : UIViewController {
     
     private lazy var menuView: UIView = {
         let view = UIView()
-        view.makeRectangleViewWithDropShadow(backgroundColor: .darkGray)
+        view.makeRectangleViewWithDropShadow(backgroundColor: .clear)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -81,7 +87,7 @@ class ViewController : UIViewController {
         
         if buttonType == .main {
             animateMainButtonRotation()
-            //animateMenuViewVisibility()
+            animateMenuViewVisibility()
             animateSecondayButtonTranslation()
         }
     }
@@ -102,10 +108,10 @@ class ViewController : UIViewController {
                         self.buttons[buttonType].transform = CGAffineTransform(translationX: -self.secondary1ButtonXTranslation, y: 0)
                         
                     } else if buttonType == ButtonType.secondary2.rawValue {
-                        self.buttons[buttonType].transform = CGAffineTransform(translationX: -self.secondary2ButtonXTranslation, y: 0)
+                        self.buttons[buttonType].transform = CGAffineTransform(translationX: -self.secondary2ButtonXTranslation, y: -self.secondary2ButtonYTranslation)
                         
                     } else if buttonType == ButtonType.secondary3.rawValue {
-                        self.buttons[buttonType].transform = CGAffineTransform(translationX: -self.secondary3ButtonXTranslation, y: 0)
+                        self.buttons[buttonType].transform = CGAffineTransform(translationX: 0, y: -self.secondary3ButtonYTranslation)
                         
                     }
                     
@@ -151,7 +157,7 @@ class ViewController : UIViewController {
                 break
 
             case .normal:
-                self.menuView.transform = CGAffineTransform(scaleX: 5, y: 0)
+                self.menuView.transform = CGAffineTransform(scaleX: 5, y: 5)
                 self.menuViewTransform = .transformed
                 break
             }
@@ -182,18 +188,17 @@ class ViewController : UIViewController {
         }
 
         // menu view
-//        menuView.layer.cornerRadius = buttonSize/2
-//        // drop shadow
-//        menuView.layer.shadowOpacity = 0.25
-//        menuView.layer.shadowRadius = 5
-//        menuView.layer.shadowOffset = CGSize(width: 0, height: 5) // move down by 5 points
-//        NSLayoutConstraint.activate([
-//            menuView.heightAnchor.constraint(equalToConstant: buttonSize),
-//            //menuView.widthAnchor.constraint(equalToConstant: buttonSize),
+        menuView.layer.cornerRadius = buttonSize/2
+        // drop shadow
+        menuView.layer.shadowOpacity = 0.25
+        menuView.layer.shadowRadius = 5
+        menuView.layer.shadowOffset = CGSize(width: 0, height: 5) // move down by 5 points
+        NSLayoutConstraint.activate([
+            menuView.heightAnchor.constraint(equalToConstant: buttonSize),
+            menuView.widthAnchor.constraint(equalToConstant: buttonSize),
 //            menuView.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: insetToCorner),
-//            menuView.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -insetToCorner),
-//            menuView.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -insetToCorner),
-//        ])
+            menuView.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -insetToCorner),
+            menuView.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -insetToCorner),
+        ])
     }
 }
-
